@@ -1,0 +1,22 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="footprints" extends="struts-default">
+        
+        <!-- Add your actions here -->
+		<action name="HelloWorld" class="com.mixercast.test.helloworld.HelloWorld">
+            <result>/index.jsp</result>
+        </action>
+		
+		<action name="Logon_*" method="{1}" class="com.mixercast.test.helloworld.Logon">
+			<result type="redirectAction">Menu</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		
+		<action name="track" class="com.mixercast.footprints.Track">
+            <result>/track.jsp</result>
+        </action>
+		
+    </package>
+</struts>
